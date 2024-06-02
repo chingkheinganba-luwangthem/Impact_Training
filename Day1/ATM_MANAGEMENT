@@ -1,1 +1,91 @@
+import time
+amount = 50000
+def withdraw():
+    global amount
+    a = int(input("enter amount to withdraw\n"))
+    if a <= amount:
+        if a%100==0:
+            print("withdraw is success ...... please collect your cash")
+            d = input("Do you want to see balance?")
+            if d[0].lower() == 'y':
+                amount = amount -a
+                print(amount)
+            else:
+                print("Thank for banking with us........")
+                time.sleep(5)
+                print("have a great day....")
+        else:
+            print("only 100 multiples are allowed")
+    else:
+        print("Insufficent funds.....")
+print("\t\tWelcome to ICICI Bank")
+
+
+def Deposit():
+    global amount
+    aa = int(input("Enter amount to Deposit:\n"))
+    if aa > 0:
+        print("Deposit seccessfull........")
+        dd = input("Do you want to see balance?")
+        if dd[0].lower() == 'y':
+                amount = amount + aa
+                print(amount)
+          
+        
+    else:
+        ("Invalid deposit plese try again....")
+
+def transfer():
+    ac = int(input("enter account number"))
+    rac = int(input("Re-enter account number"))
+    if ac ==rac:
+        a = int(input("edter amount to transfer"))
+        if a<= amount:
+            if a% 100 == 0:
+                print("transfer is success.....\npleas collect your cash")
+                d = input("Do you want to see balance?")
+                if d[0].lower()=='y':
+                    amount = amount-a
+                    print(amount)
+                else:
+                    print("Thanks for banking with us.....")
+                    time.sleep(5)
+                    print("Have a great day")
+            else:
+                print("only 100 multiple are allowed")
+        else:
+            print("insufficient funds....")
+    else:
+        print("invalid number")
+
+def CheckBalance():
+    print(" Balance: ",amount)
+
+
+op = input("Select\n1.Withdraw\n2.Deposit\n3.Transfer\n4.Check Balance\nEnter an option\n")
+if op =="1":
+    withdraw()
+elif op =="2":
+    Deposit()
+elif op == '3':
+    transfer()
+elif op == '4':
+    CheckBalance()
+
+
+
+
+
+
+
+
+    
+   
+
+
+ 
+
+
+
+
 
