@@ -1,0 +1,20 @@
+class Area:
+    
+    
+    def __init__(self):
+        self.length = int(input("Enter length: "))
+        self.breadth = int(input("Enter breadth: "))
+        self.height = int(input("Enter height: "))
+        
+    def triangle(self):
+        return 1/2 * self.breadth * self.height
+       
+    def rectangle(self):
+        return self.breadth * self.length
+    def square(self):
+       return self.height * self.height
+
+obj = Area()
+print("The area of triangle is:",obj.triangle())
+print("The area of rectangle is:",obj.rectangle())
+print("The area of square is:",obj.square())
