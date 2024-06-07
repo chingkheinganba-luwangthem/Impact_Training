@@ -1,0 +1,57 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LL:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insertAtbeg(self, data):
+        new = Node(data)
+        new.next = self.head
+        self.head = new
+
+    def insert_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+
+    def dis(self):
+        itr = self.head
+        while itr:
+            print(itr.data, end='----->')
+            itr = itr.next
+
+    def remove(self, key):
+        itr = self.head
+        prev = None
+        if itr is not None and itr.data == key:
+            self.head = itr.next
+            itr = None
+            return
+
+        while itr is not None and itr.data != key:
+            prev = itr
+            itr = itr.next
+
+        if itr is None:
+            return
+
+        prev.next = itr.next
+        itr = None
+
+obj = LL()
+obj.insert_end(10)
+obj.insert_end(20)
+obj.insert_end('mango')
+obj.insert_end('apple')
+obj.insertAtbeg('first')
+
+obj.dis()
+
